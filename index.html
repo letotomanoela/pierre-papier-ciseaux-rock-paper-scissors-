@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="info">
+                <div class="text">PIERRE<br>PAPIER<br>CISEAUX</div>
+                <div class="score">
+                    <h3>SCORE</h3>
+                    <div class="score-txt">0</div>
+                </div>
+            </div>
+        </header>
+        <section class="step1">
+            <div class="game">
+                <div class="img pierre" title="PIERRE"><img src="images/icon-rock.svg" alt=""></div>
+                <div class="img papier" title="PAPIER"><img src="images/icon-paper.svg" alt=""></div>
+                <div class="img ciseaux" title="CISEAUX"><img src="images/icon-scissors.svg" alt=""></div>
+            </div>
+        </section>
+        <section class="step2 hide">
+            <div class="pick">
+                <div class="player user">
+                    <h2>Vous avez choisis</h2>
+                    <div class="img player1"><img alt=""></div>
+                </div>
+                <div class="player computer ">
+                    <h2>L'ordinateur a choisis</h2>
+                    <div class="img player2 load"><img alt=""></div>
+                </div>
+            </div>
+        </section>
+        <section class="step3 hide">
+            <div class="result">
+                <div class="player user">
+                    <h2>VOUS</h2>
+                    <div class="img player1"><img alt=""></div>
+
+                </div>
+                <div class="result-info">
+                    <div class="result-text">VOUS AVEZ GAGNE</div>
+                    <button class="replay">REJOUER</button>
+                </div>
+                <div class="player computer">
+                    <h2>L'ORDINATEUR</h2>
+                    <div class="img player2"><img alt=""></div>
+                </div>
+            </div>
+        </section>
+        <button class="rules mob">REGLES</button>
+        <footer>
+            <button class="rules">REGLES</button>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Letoto Manoela </a>.
+            </div>
+        </footer>
+
+    </div>
+    <div class="rules-modal">
+        <div class="modal-content">
+            <div class="top">
+                <h2>REGLES</h2>
+                <div class="close"><img src="images/icon-close.svg" alt="close"></div>
+            </div>
+
+            <img src="images/image-rules.svg" alt="rules">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

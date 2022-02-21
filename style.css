@@ -1,0 +1,405 @@
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                        font-family: 'Barlow Semi Condensed', sans-serif;
+                    }
+                    
+                    body {
+                        background: hsl(237, 49%, 15%);
+                    }
+                    
+                    .hide {
+                        display: none;
+                    }
+                    
+                    h2 {
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                    
+                    .container {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    
+                    .container header {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 20px;
+                    }
+                    
+                    header .info {
+                        width: 100%;
+                        min-width: 600px;
+                        max-width: 700px;
+                        margin: 20px;
+                        border: 3px solid hsl(217, 16%, 45%);
+                        border-radius: 6px;
+                        color: #fff;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 20px;
+                    }
+                    
+                    .info .text {
+                        font-size: 25px;
+                    }
+                    
+                    header .score {
+                        width: 150px;
+                        height: 100px;
+                        background-color: #f1f1f1;
+                        border-radius: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        font-weight: bold;
+                    }
+                    
+                    .score h3 {
+                        color: hsl(229, 64%, 46%);
+                    }
+                    
+                    .score .score-txt {
+                        color: hsl(229, 25%, 31%);
+                        font-size: 50px;
+                    }
+                    
+                    section.step1 {
+                        width: 500px;
+                        position: relative;
+                        margin: 0 auto;
+                    }
+                    
+                    section.step2 {
+                        width: 600px;
+                        position: relative;
+                        height: 400px;
+                        margin: 10px auto;
+                    }
+                    
+                    section.step3 {
+                        width: 600px;
+                        position: relative;
+                        height: 400px;
+                        margin: 10px auto;
+                    }
+                    
+                    .game {
+                        width: 400px;
+                        height: 400px;
+                        margin: 0 auto;
+                        background: url('images/bg-triangle.svg');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    
+                    .attribution {
+                        font-size: 11px;
+                        text-align: center;
+                    }
+                    
+                    .attribution a {
+                        color: hsl(228, 45%, 44%);
+                    }
+                    
+                    .img {
+                        background: #fff;
+                        width: 175px;
+                        height: 175px;
+                        margin: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        position: absolute;
+                        cursor: pointer;
+                    }
+                    
+                    .step2 .img,
+                    .step3 .img {
+                        position: relative;
+                    }
+                    
+                    .img.pierre {
+                        border: 20px solid hsl(349, 70%, 56%);
+                        bottom: 5%;
+                        left: 33%;
+                    }
+                    
+                    .img.papier {
+                        border: 20px solid hsl(230, 89%, 65%);
+                        left: 10%;
+                    }
+                    
+                    .img.ciseaux {
+                        border: 20px solid hsl(40, 84%, 53%);
+                        right: 10%;
+                    }
+                    
+                    .pick,
+                    .result {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                    }
+                    
+                    .player {
+                        color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 250px;
+                    }
+                    
+                    .pierre-color {
+                        border: 20px solid hsl(349, 70%, 56%);
+                    }
+                    
+                    .ciseaux-color {
+                        border: 20px solid hsl(40, 84%, 53%);
+                    }
+                    
+                    .papier-color {
+                        border: 20px solid hsl(230, 89%, 65%);
+                    }
+                    
+                    .result-info {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                    
+                    .result-text {
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #fff;
+                        text-transform: uppercase;
+                    }
+                    
+                    .replay {
+                        width: 90%;
+                        background: #fff;
+                        border: none;
+                        font-size: 18px;
+                        padding: 10px;
+                        border-radius: 5px;
+                        color: hsl(40, 84%, 53%);
+                        margin: 20px;
+                        cursor: pointer;
+                    }
+                    
+                    .rules-modal {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        background: rgba(0, 0, 0, 0.7);
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: all 0.5s ease;
+                    }
+                    
+                    .modal-content {
+                        width: 300px;
+                        height: 300px;
+                        background: #fff;
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .modal-content img[alt='rules'] {
+                        width: 250px;
+                    }
+                    
+                    .modal-content .top {
+                        padding: 10px;
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    
+                    .modal-content .close {
+                        cursor: pointer;
+                    }
+                    
+                    .img.player2.load {
+                        background: rgba(0, 0, 0, 0.4);
+                        border: none;
+                    }
+                    
+                    .img.player2.load img {
+                        opacity: 0;
+                    }
+                    
+                    .show-modal {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                    
+                    .rules.mob {
+                        display: none;
+                    }
+                    
+                    footer button {
+                        padding: 10px 30px;
+                        position: absolute;
+                        background: transparent;
+                        border: 1px solid #fff;
+                        color: #fff;
+                        border-radius: 5px;
+                        font-size: 18px;
+                        right: 5%;
+                        bottom: 5%;
+                        cursor: pointer;
+                    }
+                    
+                    @media screen and (max-width: 675px) {
+                        header .info {
+                            width: 90%;
+                            min-width: 220px;
+                            max-width: none;
+                        }
+                        .info .text {
+                            font-size: 20px;
+                        }
+                        header .score {
+                            width: 100px;
+                            height: 75px;
+                        }
+                        .score .score-txt {
+                            color: hsl(229, 25%, 31%);
+                            font-size: 30px;
+                        }
+                        section.step1 {
+                            width: 90%;
+                        }
+                        .game {
+                            width: 300px;
+                            height: 300px;
+                            background-size: 150px;
+                            position: relative;
+                        }
+                        .img {
+                            width: 100px;
+                            height: 100px;
+                        }
+                        .img.pierre {
+                            border: 10px solid hsl(349, 70%, 56%);
+                            bottom: 12%;
+                        }
+                        .img.papier {
+                            border: 10px solid hsl(230, 89%, 65%);
+                            top: 10%;
+                        }
+                        .img.ciseaux {
+                            border: 10px solid hsl(40, 84%, 53%);
+                            top: 10%;
+                        }
+                        footer button {
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                        footer {
+                            position: absolute;
+                            bottom: 20px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        .rules.mob {
+                            display: block;
+                            padding: 10px 30px;
+                            width: 150px;
+                            margin: 30px auto;
+                            background: transparent;
+                            border: 1px solid #fff;
+                            color: #fff;
+                            border-radius: 5px;
+                            font-size: 18px;
+                            right: 5%;
+                            bottom: 5%;
+                            cursor: pointer;
+                        }
+                        section.step2 {
+                            width: 90%;
+                            margin-top: 50px;
+                            height: auto;
+                        }
+                        .player {
+                            height: 200px;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .step2 h2,
+                        .step3 h2 {
+                            order: 2;
+                            text-transform: uppercase;
+                            font-size: 18px;
+                            text-align: center;
+                        }
+                        .pierre-color {
+                            border: 10px solid hsl(349, 70%, 56%);
+                        }
+                        .ciseaux-color {
+                            border: 10px solid hsl(40, 84%, 53%);
+                        }
+                        .papier-color {
+                            border: 10px solid hsl(230, 89%, 65%);
+                        }
+                        section.step3 {
+                            width: 100%;
+                            height: auto;
+                        }
+                        .step3 h2 {
+                            text-transform: uppercase;
+                            font-size: 18px;
+                        }
+                        .result {
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                        }
+                        .result-info {
+                            order: 3;
+                            width: 100%;
+                        }
+                        .replay {
+                            width: 200px;
+                        }
+                        .rules-modal {
+                            background: #fff;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .modal-content {
+                            width: 300px;
+                            height: 100%;
+                            position: relative;
+                            margin-top: -200px;
+                        }
+                        .modal-content .top {
+                            justify-content: center
+                        }
+                        .modal-content .close {
+                            cursor: pointer;
+                            position: absolute;
+                            bottom: 20px;
+                        }
+                        .top {
+                            margin: 50px;
+                        }
+                        .top h2 {
+                            margin: 20px;
+                        }
+                    }
