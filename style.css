@@ -313,10 +313,7 @@
                             pointer-events: none;
                         }
                         footer {
-                            position: absolute;
-                            bottom: 20px;
-                            left: 50%;
-                            transform: translateX(-50%);
+                            position: relative;
                         }
                         .rules.mob {
                             display: block;
